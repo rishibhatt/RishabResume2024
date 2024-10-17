@@ -1,0 +1,15 @@
+.navmenu-container {
+  background-color: #747473;
+}
+
+.navmenu-container a {
+  color: white;
+  padding: 5px;
+  border-bottom: 2px solid whitesmoke;
+}
+.navmenu-container a:hover {
+  color: red;
+  background-color: white;
+  padding: 5px;
+  border-bottom: 2px solid whitesmoke;
+}

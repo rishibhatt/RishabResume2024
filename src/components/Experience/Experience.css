@@ -1,0 +1,77 @@
+/* Container for the timeline */
+.timeline-container {
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  padding-left: 50px;
+  margin-top: 50px;
+}
+
+/* Style for each timeline item */
+.timeline-item {
+  position: relative;
+  margin-bottom: 50px;
+  opacity: 0; /* Hidden by default for animation */
+  display: flex;
+  align-items: flex-start;
+}
+
+/* Blue dot on the timeline */
+.timeline-item:before {
+  content: "";
+  position: absolute;
+  left: -35px;
+  top: 10px;
+  width: 15px;
+  height: 15px;
+  background-color: #3498db;
+  border-radius: 50%;
+  z-index: 1;
+}
+
+/* Vertical timeline line */
+.timeline-container:before {
+  content: "";
+  position: absolute;
+  left: -27px;
+  top: 0;
+  width: 3px;
+  height: 100%;
+  background-color: #3498db;
+  z-index: 0;
+}
+
+/* Year of experience */
+.timeline-year {
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: #3498db;
+  margin-right: 20px;
+}
+
+/* Details of the experience */
+.timeline-details {
+  background-color: #f5f5f5;
+  padding: 15px;
+  border-radius: 8px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  flex: 1;
+}
+
+.timeline-details h3 {
+  font-size: 1.2rem;
+  font-weight: bold;
+  color: #333;
+  margin-bottom: 5px;
+}
+
+.timeline-details h4 {
+  font-size: 1rem;
+  color: #666;
+  margin-bottom: 10px;
+}
+
+.timeline-details p {
+  font-size: 0.9rem;
+  color: #777;
+}
