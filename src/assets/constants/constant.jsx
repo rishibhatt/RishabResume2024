@@ -42,7 +42,7 @@ export const Experiences = [
   },
   {
     year: "Feb 2022 - Sep 2022",
-    role: "Associatr Software Developer",
+    role: "Associate Software Developer",
     company: "Trantor",
     location: "Chandigarh",
     description: [
