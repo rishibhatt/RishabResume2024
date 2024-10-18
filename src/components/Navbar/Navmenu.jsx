@@ -1,13 +1,26 @@
-import React from "react";
+import React, { useRef } from "react";
 import "./Navmenu.css";
 import cv from "../../assets/images/cv.png";
 import email from "../../assets/images/email.png";
 import { Link, animateScroll as scroll } from "react-scroll";
-
+import gsap from "gsap";
+import { useGSAP } from "@gsap/react";
 const Navmenu = ({ closemenu }) => {
+  const gsapRef = useRef();
+  useGSAP(() => {
+    gsap.to(gsapRef.current, {
+      display: "flex",
+      height: "100%",
+      duration: 1,
+      ease: "back.out(1.7)",
+    });
+  });
   return (
     <>
-      <div className="navmenu-container cursor-pointer font-inter backdrop-blur-2xl opacity-80 p-10 text-black h-[100vh] w-full absolute top-0 left-0 flex flex-col justify-evenly z-10">
+      <div
+        ref={gsapRef}
+        className="navmenu-container hidden cursor-pointer font-inter backdrop-blur-2xl opacity-90 p-10 text-black  w-full absolute top-0 left-0  flex-col justify-evenly z-10 "
+      >
         <Link
           to="home"
           onClick={closemenu}
