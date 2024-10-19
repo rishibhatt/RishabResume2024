@@ -21,10 +21,10 @@ const Project = () => {
               id % 2 === 0 ? "lg:flex-row" : "lg:flex-row-reverse"
             } items-center relative`}
           >
-            <div className="lg:w-[60%] border border-black" data-aos="zoom-in">
+            <div className="lg:w-[60%]" data-aos="zoom-in">
               <img
                 src={project.image}
-                className="project-image border object-fill mx-auto  lg:h-full rounded-xl"
+                className="project-image  object-fill mx-auto   lg:h-full rounded-xl"
                 alt="project"
               />
             </div>
