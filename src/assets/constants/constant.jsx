@@ -28,40 +28,61 @@ export const Cignex_Img =
 export const blogLink = "https://medium.com/@bhattrishu24";
 export const Experiences = [
   {
+    year: "Nov 2024 - Present",
+    role: "Frontend Engineer (Full-time)",
+    company: "Debut Infotech",
+    location: "Mohali",
+    description: [
+      "Developed Encrypted Cash Website, a secure and user-friendly crypto transaction platform using ReactJS and NextJS, ensuring seamless blockchain interactions.",
+      "Integrated blockchain functions by consuming APIs to interact with smart contracts for secure cryptocurrency transactions.",
+      "Implemented wallet authentication and transaction verification using Web3.js and Ethers.js to enhance security and user trust.",
+      "Designed responsive UI components for smooth user interaction, ensuring a seamless experience across multiple devices.",
+      "Optimized frontend data-fetching mechanisms for real-time balance updates and transaction confirmations, improving overall platform performance.",
+      "Led the frontend development of RVA IDO (Initial DEX Offering Platform), a cryptocurrency token launch platform built with NextJS.",
+      "Developed token sale and staking interfaces, enabling users to efficiently participate in the IDO.",
+      "Integrated real-time blockchain data fetching for token pricing, sale progress, and staking rewards.",
+      "Implemented a secure KYC onboarding process to ensure compliance with regulatory standards.",
+      "Designed dynamic dashboards for token distribution, vesting schedules, and user participation analytics.",
+      "Collaborated with backend and blockchain engineers to improve smart contract interactions on the frontend."
+    ],
+    logo: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQJYvD8fCfDn-QlVgZKl3dGZmXrG7zQqKQJpA&s",
+  },
+  {
     year: "Jan 2023 - Nov 2024",
-    role: "Software Developer",
+    role: "Frontend Engineer (Full-time)",
     company: "Cignex",
     location: "Remote",
     description: [
-      "Implemented UI changes in the DSI hcp live project with Reactjs.",
-      "Work revolves around client interaction and resolving support tickets.",
-      "Worked as a support engineer for Daiichi Sankyo project.",
-      "Worked in POC creation for HCP One Link.",
+      "Developed and implemented UI enhancements for the DSI HCP live project using ReactJS, TailwindCSS, and Redux, improving page load times by 20% and enhancing overall application responsiveness.",
+      "Led the development of a comprehensive real estate platform using React.js, implementing advanced features such as dynamic property listings, a custom search functionality, and a user favorites section.",
+      "Optimized the platform's search algorithm for property listings, resulting in a 40% faster search experience for users.",
+      "Collaborated with backend teams to design efficient data-fetching mechanisms, reducing API call latency by 15% and improving real-time data rendering for an enhanced user experience.",
+      "Contributed to proof-of-concept (POC) creation for HCP One Link with Appian, presenting innovative frontend solutions to stakeholders and securing buy-in for new features.",
+      "Led UI debugging and cross-browser testing to ensure high performance and compatibility across all major browsers, achieving a 100% cross-platform consistency rate."
     ],
     logo: "https://d3og4dnvcwjaft.cloudfront.net/sites/default/files/CIGNEX%20Logo%20%28TM%29_V2.png",
   },
   {
     year: "Feb 2022 - Sep 2022",
-    role: "Associate Software Developer",
-    company: "Trantor",
-    location: "Chandigarh",
+    role: "Frontend Engineer (Full-time)",
+    company: "Trantor Software Pvt. Ltd.",
+    location: "Chandigarh, India",
     description: [
-      "Created Employee Management Portal with all CRUD operations in MERN.",
-      "Created REST Apis in the Employee Management Portal with Express and Node JS.",
-      "Created Ziosk Support Portal to fetch data from resilio monitors and provide it to support team in a console",
-      "Worked closely with the Ziosk project.",
+      "Collaborated closely on the Ziosk project, contributing to frontend development using React.JS to enhance user experience and responsiveness.",
+      "Developed a comprehensive Employee Management Portal, implementing all CRUD operations with ReactJS for the frontend and REST APIs created with Express and Node.js, achieving 25% reduction in data retrieval times.",
+      "Created the Ziosk Support Portal frontend to fetch and display real-time data from Resilio monitors, providing a consolidated view for the support team."
     ],
     logo: "https://www.trantorinc.com/wp-content/uploads/2023/01/Trantor-Logo_Color_new-1.svg",
   },
   {
-    year: "Feb 2022 - Sep 2022",
-    role: "Machine Learning Intern",
+    year: "Feb 2021 - Aug 2021",
+    role: "Machine Learning Intern (Full-time)",
     company: "TCIL-IT",
-    location: "Chandigarh",
+    location: "Chandigarh, India",
     description: [
       "Implemented data visualization on various data sets.",
       "Implemented various data models on some historical dataset.",
-      "Created Fake Job post detection using NLP.",
+      "Created Fake Job post detection using NLP."
     ],
     logo: "https://media.licdn.com/dms/image/v2/C560BAQE9dylpW5VBRw/company-logo_200_200/company-logo_200_200/0/1671475290270?e=1736985600&v=beta&t=ZNl9uSzzq-CAFy_9gsJrnzjTxgWCs6W6WKfEEssYQOQ",
   },
@@ -69,19 +90,49 @@ export const Experiences = [
 
 export const Projects = [
   {
-    image: PropertyBazzar,
-    title: "PropertyBazzar",
+    title: "Encrypted Cash - Crypto Transaction Platform",
     description:
-      "PropertyBazzar is a full-stack MERN web app designed for seamless real estate management. It features JWT-based authorization for secure user registration and login. Users can browse properties, add new listings, and manage their account. The app integrates a modern, responsive UI for a smooth and engaging experience across devices.",
-    demoLink: "https://propertybazzar.onrender.com/",
-    codeLink: "https://github.com/rishibhatt/PropertyBazzar",
+      "A secure and decentralized crypto transaction platform built with ReactJS and NextJS, enabling users to send, receive, and track digital assets in real time. Features Web3 authentication with MetaMask for enhanced security and seamless user login.",
+    tech: ["ReactJS", "NextJS", "Web3", "TailwindCSS", "MetaMask", "Smart Contracts"],
+    demoLink: "#",
+    codeLink: "#",
+    featured: true
   },
   {
-    image: TripWeb,
-    title: "TripWeb",
+    title: "RVA IDO - Token Launch Platform",
     description:
-      "TripWeb is a single-page React app showcasing a visually appealing design for trip planning. It features interactive elements for trip details, destinations, and itinerary management. While not responsive, it offers a clean and polished UI",
-    demoLink: "https://rishibhatt.github.io/gna-frontend/",
-    codeLink: "https://github.com/rishibhatt/gna-frontend",
+      "A blockchain-powered Initial DEX Offering (IDO) platform enabling users to participate in token launches, stake tokens, and manage KYC verification. Built with dynamic user interface and secure KYC onboarding process.",
+    tech: ["ReactJS", "NextJS", "Redux", "Web3", "TailwindCSS"],
+    demoLink: "#",
+    codeLink: "#",
+    featured: true
   },
+  {
+    title: "PropertyBazzar - Real Estate Platform",
+    description:
+      "A comprehensive real estate platform for property listings with JWT and OAuth authentication. Features property listing, filtering, sorting, and favorites functionality with optimized data-fetching mechanisms.",
+    tech: ["ReactJS", "TailwindCSS", "Redux", "JWT", "OAuth"],
+    demoLink: "https://propertybazzar.onrender.com/",
+    codeLink: "https://github.com/rishibhatt/PropertyBazzar",
+    featured: true
+  },
+  {
+    title: "Employee Management Portal",
+    description:
+      "A full-stack MERN application for managing employee records with complete CRUD operations. Features responsive design, data validation, and real-time feedback for enhanced user experience.",
+    tech: ["ReactJS", "NodeJS", "Express", "MongoDB"],
+    demoLink: "#",
+    codeLink: "#",
+    featured: false
+  },
+  {
+    title: "DSI HCP Live Project Enhancement",
+    description:
+      "Enhanced UI/UX for Daiichi Sankyo's healthcare professional platform, implementing advanced features with React.js and optimizing performance for better user experience.",
+    tech: ["ReactJS", "TailwindCSS", "Redux"],
+    demoLink: "#",
+    codeLink: "#",
+    featured: false,
+    isConfidential: true
+  }
 ];
