@@ -1,8 +1,19 @@
 import React from "react";
 import { motion } from "framer-motion";
 import { useTheme } from "../../contexts/ThemeContext";
-import { Code, Palette, Zap, Coffee, Heart, Lightbulb, Award, Trophy, BookOpen, Target } from "lucide-react";
-import Rishi from "../../assets/images/Rishi.png";
+import {
+  Code,
+  Palette,
+  Zap,
+  Coffee,
+  Heart,
+  Lightbulb,
+  Award,
+  Trophy,
+  BookOpen,
+  Target,
+} from "lucide-react";
+import Rishi from "../../assets/images/Rishab-Image.jpeg";
 
 const About = () => {
   const { isDark } = useTheme();
@@ -35,25 +46,25 @@ const About = () => {
       label: "Years of Experience",
       value: "3+",
       icon: <Code className="w-6 h-6" />,
-      color: "from-blue-500 to-cyan-500"
+      color: "from-blue-500 to-cyan-500",
     },
     {
       label: "Projects Completed",
       value: "10+",
       icon: <Trophy className="w-6 h-6" />,
-      color: "from-purple-500 to-pink-500"
+      color: "from-purple-500 to-pink-500",
     },
     {
       label: "Technologies",
       value: "15+",
       icon: <Zap className="w-6 h-6" />,
-      color: "from-green-500 to-emerald-500"
+      color: "from-green-500 to-emerald-500",
     },
     {
       label: "Coffee Consumed",
       value: "∞",
       icon: <Coffee className="w-6 h-6" />,
-      color: "from-amber-500 to-orange-500"
+      color: "from-amber-500 to-orange-500",
     },
   ];
 
@@ -62,25 +73,25 @@ const About = () => {
       icon: <Code className="w-8 h-8" />,
       title: "Frontend Development",
       desc: "Building responsive and interactive web applications with React, Next.js, and modern CSS frameworks.",
-      tech: ["React.js", "Next.js", "TypeScript", "TailwindCSS"]
+      tech: ["React.js", "Next.js", "TypeScript", "TailwindCSS"],
     },
     {
       icon: <Palette className="w-8 h-8" />,
       title: "UI/UX Design",
       desc: "Creating beautiful and intuitive user interfaces that provide exceptional user experiences.",
-      tech: ["Figma", "Adobe XD", "Responsive Design", "User Research"]
+      tech: ["Figma", "Adobe XD", "Responsive Design", "User Research"],
     },
     {
       icon: <Target className="w-8 h-8" />,
       title: "Problem Solving",
       desc: "Analytical thinking to break down complex problems and implement efficient solutions.",
-      tech: ["Algorithm Design", "Code Optimization", "Debugging", "Testing"]
+      tech: ["Algorithm Design", "Code Optimization", "Debugging", "Testing"],
     },
     {
       icon: <Lightbulb className="w-8 h-8" />,
       title: "Innovation",
       desc: "Staying updated with latest technologies and implementing cutting-edge solutions.",
-      tech: ["Web3", "Blockchain", "Progressive Web Apps", "AI Integration"]
+      tech: ["Web3", "Blockchain", "Progressive Web Apps", "AI Integration"],
     },
   ];
 
@@ -88,28 +99,30 @@ const About = () => {
     {
       icon: <Award className="w-6 h-6" />,
       title: "Radio Jockey @90.8 MHz",
-      description: "Hosted community shows during college, developing communication and presentation skills."
+      description:
+        "Hosted community shows during college, developing communication and presentation skills.",
     },
     {
       icon: <Trophy className="w-6 h-6" />,
       title: "Idea Hunt Winner",
-      description: "Won startup idea competition organized by GradCapital for innovative business concept."
+      description:
+        "Won startup idea competition organized by GradCapital for innovative business concept.",
     },
     {
       icon: <BookOpen className="w-6 h-6" />,
       title: "Continuous Learner",
-      description: "Always exploring new technologies and sharing knowledge with the developer community."
-    }
+      description:
+        "Always exploring new technologies and sharing knowledge with the developer community.",
+    },
   ];
 
   return (
     <motion.section
       id="about"
       className="py-20 bg-gradient-to-br from-slate-50 via-white to-blue-50 dark:from-slate-900 dark:via-slate-800 dark:to-blue-900/20 transition-colors duration-300"
-      variants={containerVariants}
       initial="hidden"
-      whileInView="visible"
-      viewport={{ once: true, amount: 0.2 }}
+      animate="visible"
+      variants={containerVariants}
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Header */}
@@ -128,7 +141,8 @@ const About = () => {
             whileInView={{ y: 0, opacity: 1 }}
             transition={{ duration: 0.6, delay: 0.2 }}
           >
-            Passionate Frontend Developer crafting digital experiences that matter
+            Passionate Frontend Developer crafting digital experiences that
+            matter
           </motion.p>
         </motion.div>
 
@@ -162,16 +176,24 @@ const About = () => {
               whileInView={{ opacity: 1, x: 0 }}
               transition={{ duration: 0.6, delay: 0.3 }}
             >
-              <div className="absolute top-4 left-4 text-4xl text-blue-400 opacity-30 font-serif">"</div>
+              <div className="absolute top-4 left-4 text-4xl text-blue-400 opacity-30 font-serif">
+                "
+              </div>
               <p className="text-xl text-slate-700 dark:text-slate-300 italic font-medium relative z-10 pt-4 pb-4">
-                Driven by curiosity and creativity, I thrive on turning complex problems into elegant solutions that make a real impact.
+                Driven by curiosity and creativity, I thrive on turning complex
+                problems into elegant solutions that make a real impact.
               </p>
-              <div className="absolute bottom-4 right-4 text-4xl text-blue-400 opacity-30 font-serif rotate-180">"</div>
+              <div className="absolute bottom-4 right-4 text-4xl text-blue-400 opacity-30 font-serif rotate-180">
+                "
+              </div>
             </motion.div>
           </motion.div>
 
           {/* Right Column - Content */}
-          <motion.div className="lg:col-span-7 space-y-8" variants={itemVariants}>
+          <motion.div
+            className="lg:col-span-7 space-y-8"
+            variants={itemVariants}
+          >
             {/* Bio */}
             <div>
               <h3 className="text-2xl md:text-3xl font-bold text-slate-800 dark:text-white mb-6 font-space-grotesk">
@@ -179,21 +201,26 @@ const About = () => {
               </h3>
               <div className="space-y-4 text-slate-600 dark:text-slate-300 leading-relaxed">
                 <p>
-                  With over 3 years of experience in frontend development, I specialize in creating 
-                  responsive, user-friendly web applications using modern technologies like React.js, 
-                  Next.js, and TailwindCSS. My journey in tech has been driven by a passion for 
-                  combining technical excellence with creative design.
+                  With over 3 years of experience in frontend development, I
+                  specialize in creating responsive, user-friendly web
+                  applications using modern technologies like React.js, Next.js,
+                  and TailwindCSS. My journey in tech has been driven by a
+                  passion for combining technical excellence with creative
+                  design.
                 </p>
                 <p>
-                  I believe in the power of clean code, thoughtful design, and continuous learning. 
-                  My approach to development focuses on creating scalable solutions that not only 
-                  meet current needs but also adapt to future requirements.
+                  I believe in the power of clean code, thoughtful design, and
+                  continuous learning. My approach to development focuses on
+                  creating scalable solutions that not only meet current needs
+                  but also adapt to future requirements.
                 </p>
                 <p>
-                  Beyond coding, I bring unique perspectives from my experience as a Radio Jockey, 
-                  which has enhanced my communication skills and ability to engage with diverse audiences. 
-                  This combination of technical expertise and communication skills allows me to bridge 
-                  the gap between complex technology and user-friendly experiences.
+                  Beyond coding, I bring unique perspectives from my experience
+                  as a Radio Jockey, which has enhanced my communication skills
+                  and ability to engage with diverse audiences. This combination
+                  of technical expertise and communication skills allows me to
+                  bridge the gap between complex technology and user-friendly
+                  experiences.
                 </p>
               </div>
             </div>
@@ -211,7 +238,9 @@ const About = () => {
                   className="text-center p-6 glass-effect rounded-xl hover:shadow-xl transition-all duration-300 group"
                   whileHover={{ scale: 1.05, y: -5 }}
                 >
-                  <div className={`inline-flex items-center justify-center w-12 h-12 rounded-full bg-gradient-to-r ${stat.color} text-white mb-3 group-hover:scale-110 transition-transform duration-200`}>
+                  <div
+                    className={`inline-flex items-center justify-center w-12 h-12 rounded-full bg-gradient-to-r ${stat.color} text-white mb-3 group-hover:scale-110 transition-transform duration-200`}
+                  >
                     {stat.icon}
                   </div>
                   <div className="text-3xl font-bold text-slate-800 dark:text-white mb-1">
