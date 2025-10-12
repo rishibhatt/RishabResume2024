@@ -43,7 +43,7 @@ export const Experiences = [
       "Integrated real-time blockchain data fetching for token pricing, sale progress, and staking rewards.",
       "Implemented a secure KYC onboarding process to ensure compliance with regulatory standards.",
       "Designed dynamic dashboards for token distribution, vesting schedules, and user participation analytics.",
-      "Collaborated with backend and blockchain engineers to improve smart contract interactions on the frontend."
+      "Collaborated with backend and blockchain engineers to improve smart contract interactions on the frontend.",
     ],
     logo: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQJYvD8fCfDn-QlVgZKl3dGZmXrG7zQqKQJpA&s",
   },
@@ -58,7 +58,7 @@ export const Experiences = [
       "Optimized the platform's search algorithm for property listings, resulting in a 40% faster search experience for users.",
       "Collaborated with backend teams to design efficient data-fetching mechanisms, reducing API call latency by 15% and improving real-time data rendering for an enhanced user experience.",
       "Contributed to proof-of-concept (POC) creation for HCP One Link with Appian, presenting innovative frontend solutions to stakeholders and securing buy-in for new features.",
-      "Led UI debugging and cross-browser testing to ensure high performance and compatibility across all major browsers, achieving a 100% cross-platform consistency rate."
+      "Led UI debugging and cross-browser testing to ensure high performance and compatibility across all major browsers, achieving a 100% cross-platform consistency rate.",
     ],
     logo: "https://d3og4dnvcwjaft.cloudfront.net/sites/default/files/CIGNEX%20Logo%20%28TM%29_V2.png",
   },
@@ -70,7 +70,7 @@ export const Experiences = [
     description: [
       "Collaborated closely on the Ziosk project, contributing to frontend development using React.JS to enhance user experience and responsiveness.",
       "Developed a comprehensive Employee Management Portal, implementing all CRUD operations with ReactJS for the frontend and REST APIs created with Express and Node.js, achieving 25% reduction in data retrieval times.",
-      "Created the Ziosk Support Portal frontend to fetch and display real-time data from Resilio monitors, providing a consolidated view for the support team."
+      "Created the Ziosk Support Portal frontend to fetch and display real-time data from Resilio monitors, providing a consolidated view for the support team.",
     ],
     logo: "https://www.trantorinc.com/wp-content/uploads/2023/01/Trantor-Logo_Color_new-1.svg",
   },
@@ -82,7 +82,7 @@ export const Experiences = [
     description: [
       "Implemented data visualization on various data sets.",
       "Implemented various data models on some historical dataset.",
-      "Created Fake Job post detection using NLP."
+      "Created Fake Job post detection using NLP.",
     ],
     logo: "https://media.licdn.com/dms/image/v2/C560BAQE9dylpW5VBRw/company-logo_200_200/company-logo_200_200/0/1671475290270?e=1736985600&v=beta&t=ZNl9uSzzq-CAFy_9gsJrnzjTxgWCs6W6WKfEEssYQOQ",
   },
@@ -90,22 +90,47 @@ export const Experiences = [
 
 export const Projects = [
   {
+    title: "PRC Ecosystemt - Parent-Student Blockchain Ecosystem",
+    description:
+      "A blockchain-powered ecosystem for private sale participation and coin management. Led the frontend team in developing a multi-page platform with private sale participation, request coin flows, and Web3 integrations. Built admin dashboards for buyer/advisor management with an impersonation feature for secure account access. Implemented a guided tutorial for first-time users and optimized SEO with dynamic meta tags for improved accessibility.",
+    tech: ["NextJS", "ReactJS", "Web3", "TailwindCSS", "MUI"],
+    demoLink: "https://theprccoin.com/",
+    codeLink: "#",
+    featured: true,
+  },
+  {
+    title: "GenAI PDF QA Platform - AI-Powered Document Analysis",
+    description:
+      "An AI-powered application that enables users to upload PDF documents and ask questions about their content using advanced natural language processing. Features intelligent document parsing, contextual question answering, and an intuitive chat interface for seamless interaction with document content.",
+    tech: ["NextJS", "ReactJS", "TailwindCSS", "AI/ML", "PDF.js"],
+    demoLink: "#",
+    codeLink: "#",
+    featured: true,
+  },
+  {
     title: "Encrypted Cash - Crypto Transaction Platform",
     description:
       "A secure and decentralized crypto transaction platform built with ReactJS and NextJS, enabling users to send, receive, and track digital assets in real time. Features Web3 authentication with MetaMask for enhanced security and seamless user login.",
-    tech: ["ReactJS", "NextJS", "Web3", "TailwindCSS", "MetaMask", "Smart Contracts"],
-    demoLink: "#",
+    tech: [
+      "ReactJS",
+      "NextJS",
+      "Web3",
+      "TailwindCSS",
+      "MetaMask",
+      "Smart Contracts",
+    ],
+    demoLink: "https://encryptedcash.io/",
     codeLink: "#",
-    featured: true
+    featured: true,
   },
   {
     title: "RVA IDO - Token Launch Platform",
     description:
       "A blockchain-powered Initial DEX Offering (IDO) platform enabling users to participate in token launches, stake tokens, and manage KYC verification. Built with dynamic user interface and secure KYC onboarding process.",
     tech: ["ReactJS", "NextJS", "Redux", "Web3", "TailwindCSS"],
-    demoLink: "#",
+    demoLink: "https://rvaido.com/",
     codeLink: "#",
-    featured: true
+    featured: true,
   },
   {
     title: "PropertyBazzar - Real Estate Platform",
@@ -114,7 +139,7 @@ export const Projects = [
     tech: ["ReactJS", "TailwindCSS", "Redux", "JWT", "OAuth"],
     demoLink: "https://propertybazzar.onrender.com/",
     codeLink: "https://github.com/rishibhatt/PropertyBazzar",
-    featured: true
+    featured: true,
   },
   {
     title: "Employee Management Portal",
@@ -123,7 +148,7 @@ export const Projects = [
     tech: ["ReactJS", "NodeJS", "Express", "MongoDB"],
     demoLink: "#",
     codeLink: "#",
-    featured: false
+    featured: false,
   },
   {
     title: "DSI HCP Live Project Enhancement",
@@ -133,6 +158,6 @@ export const Projects = [
     demoLink: "#",
     codeLink: "#",
     featured: false,
-    isConfidential: true
-  }
+    isConfidential: true,
+  },
 ];
