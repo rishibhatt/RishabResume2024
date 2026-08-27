@@ -1,11 +1,9 @@
 import React from "react";
 import { motion } from "framer-motion";
-import { useTheme } from "../../contexts/ThemeContext";
 import { Experiences } from "../../assets/constants/constant";
 import { Briefcase, MapPin, Calendar, ArrowRight, Building, User } from "lucide-react";
 
 const Experience = () => {
-  const { isDark } = useTheme();
   const experiences = Experiences;
 
   const containerVariants = {
@@ -113,15 +111,15 @@ const Experience = () => {
                   {experience.description.map((desc, idx) => (
                     <motion.div
                       key={idx}
-                      className="flex items-start gap-4 p-4 rounded-xl bg-white/50 bg-slate-800/30 hover:bg-white/80 hover:bg-slate-800/50 transition-all duration-200 group/item"
+                      className="flex items-start gap-4 p-4 rounded-xl bg-slate-800/30 hover:bg-slate-800/60 transition-all duration-200 group/item"
                       initial={{ opacity: 0, x: -20 }}
                       animate={{ opacity: 1, x: 0 }}
                       transition={{ duration: 0.4, delay: idx * 0.1 }}
                     >
                       <div className="flex-shrink-0 mt-1">
-                        <ArrowRight className="w-4 h-4 text-blue-500 group-hover/item:translate-x-1 transition-transform duration-200" />
+                        <ArrowRight className="w-4 h-4 text-blue-400 group-hover/item:text-blue-300 group-hover/item:translate-x-1 transition-all duration-200" />
                       </div>
-                      <p className="text-slate-600 text-slate-300 leading-relaxed text-sm md:text-base">
+                      <p className="text-slate-400 group-hover/item:text-white leading-relaxed text-sm md:text-base transition-colors duration-200">
                         {desc}
                       </p>
                     </motion.div>
