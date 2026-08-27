@@ -3,7 +3,7 @@ import { motion } from "framer-motion";
 import { ArrowDown, Github, Linkedin, Mail, Download } from "lucide-react";
 import { useTheme } from "../../contexts/ThemeContext";
 import { Link } from "react-scroll";
-import CV from "../../../public/RishabCV2025.pdf";
+import CV from "../../../public/RishabCV2026.pdf";
 const Hero = () => {
   const { isDark } = useTheme();
   
@@ -65,17 +65,21 @@ const Hero = () => {
             animate="visible"
             className="text-center max-w-4xl mx-auto"
           >
-            {/* Greeting */}
-            <motion.div variants={itemVariants} className="mb-6">
-              <span className="inline-flex items-center px-4 py-2 rounded-full bg-blue-100 dark:bg-blue-900/30 text-blue-600 dark:text-blue-400 text-sm font-medium">
+            {/* Greeting & Badge */}
+            <motion.div variants={itemVariants} className="mb-6 flex flex-wrap items-center justify-center gap-3">
+              <span className="inline-flex items-center px-4 py-2 rounded-full bg-blue-900/40 border border-blue-700/50 text-blue-400 text-sm font-medium">
                 👋 Hello, I'm
+              </span>
+              <span className="inline-flex items-center gap-1.5 px-4 py-2 rounded-full bg-purple-900/40 border border-purple-700/50 text-purple-300 text-sm font-semibold">
+                <span className="w-2 h-2 rounded-full bg-emerald-500 animate-ping inline-block"></span>
+                Available for Client Projects
               </span>
             </motion.div>
 
             {/* Main Heading */}
             <motion.h1 
               variants={itemVariants}
-              className="text-5xl md:text-7xl lg:text-8xl font-bold mb-6 font-space-grotesk"
+              className="text-4xl sm:text-5xl md:text-7xl lg:text-8xl font-bold mb-4 sm:mb-6 font-space-grotesk tracking-tight"
             >
               <span className="gradient-text text-shadow">Rishab Bhatt</span>
             </motion.h1>
@@ -83,45 +87,55 @@ const Hero = () => {
             {/* Role */}
             <motion.h2 
               variants={itemVariants}
-              className="text-2xl md:text-3xl lg:text-4xl font-semibold text-slate-700 dark:text-slate-300 mb-8"
+              className="text-xl sm:text-2xl md:text-3xl lg:text-4xl font-semibold text-slate-300 mb-6"
             >
-              Frontend Developer & UI/UX Enthusiast
+              Senior Frontend Engineer & Web3 / AI Specialist
             </motion.h2>
 
             {/* Description */}
             <motion.p 
               variants={itemVariants}
-              className="text-lg md:text-xl text-slate-600 dark:text-slate-400 mb-12 max-w-3xl mx-auto leading-relaxed"
+              className="text-base sm:text-lg md:text-xl text-slate-400 mb-10 sm:mb-12 max-w-3xl mx-auto leading-relaxed"
             >
-              I create stunning, responsive web applications with modern technologies like 
-              <span className="text-blue-600 dark:text-blue-400 font-semibold"> React.js</span>,
-              <span className="text-purple-600 dark:text-purple-400 font-semibold"> Next.js</span>, and
-              <span className="text-cyan-600 dark:text-cyan-400 font-semibold"> TailwindCSS</span>. 
-              Passionate about clean code, user experience, and bringing ideas to life.
+              <span className="font-semibold text-slate-200">4+ years</span> of experience building scalable, high-performance web applications using
+              <span className="text-blue-400 font-semibold"> React.js</span>,
+              <span className="text-purple-400 font-semibold"> Next.js</span>,
+              <span className="text-cyan-400 font-semibold"> TypeScript</span>, and
+              <span className="text-indigo-400 font-semibold"> TailwindCSS</span>. 
+              Delivered <span className="font-semibold text-slate-200">5+ production platforms</span> across Web3, AI, and fintech.
             </motion.p>
 
             {/* CTA Buttons */}
             <motion.div 
               variants={itemVariants}
-              className="flex flex-col sm:flex-row gap-4 justify-center items-center mb-16"
+              className="flex flex-col sm:flex-row gap-3 sm:gap-4 justify-center items-center mb-12 sm:mb-16"
             >
               <Link
                 to="projects"
                 smooth={true}
                 duration={500}
                 offset={-70}
-                className="btn-primary cursor-pointer group flex items-center"
+                className="w-full sm:w-auto btn-primary cursor-pointer group flex items-center justify-center text-sm sm:text-base px-6 sm:px-7 py-3.5 shadow-xl shadow-blue-500/25 touch-manipulation"
               >
-                View My Work
-                <ArrowDown className="w-5 h-5 ml-2 group-hover:animate-bounce" />
+                <span>Explore Live Projects</span>
+                <ArrowDown className="w-4 sm:w-5 h-4 sm:h-5 ml-2 group-hover:translate-y-1 transition-transform" />
               </Link>
               <a
                 href={CV}
-                className="btn-secondary group flex items-center"
-                download
+                className="w-full sm:w-auto btn-secondary group flex items-center justify-center text-sm sm:text-base px-5 sm:px-6 py-3.5 touch-manipulation"
+                download="Rishab_Bhatt_Resume_2026.pdf"
               >
-                <Download className="w-5 h-5 mr-2" />
+                <Download className="w-4 sm:w-5 h-4 sm:h-5 mr-2" />
                 Download CV
+              </a>
+              <a
+                href="https://wa.me/918360558587?text=Hi%20Rishab,%20I%20reviewed%20your%20portfolio%20and%20would%20like%20to%20discuss%20a%20project."
+                target="_blank"
+                rel="noopener noreferrer"
+                className="w-full sm:w-auto flex items-center justify-center gap-2 px-5 py-3.5 rounded-lg bg-emerald-600/20 hover:bg-emerald-600 border border-emerald-500/40 text-emerald-400 hover:text-white font-medium text-sm sm:text-base transition-all duration-300 shadow-sm touch-manipulation"
+              >
+                <span>WhatsApp Chat</span>
+                <span className="text-emerald-400">💬</span>
               </a>
             </motion.div>
 
@@ -138,7 +152,7 @@ const Hero = () => {
                   rel="noopener noreferrer"
                   whileHover={{ scale: 1.1, y: -2 }}
                   whileTap={{ scale: 0.95 }}
-                  className="p-3 rounded-full bg-white/80 dark:bg-slate-800/80 backdrop-blur-sm border border-slate-200 dark:border-slate-700 text-slate-600 dark:text-slate-400 hover:text-blue-600 dark:hover:text-blue-400 hover:border-blue-300 dark:hover:border-blue-600 transition-all duration-300 shadow-lg hover:shadow-xl"
+                  className="p-3 rounded-full bg-slate-800/80 backdrop-blur-sm border border-slate-700 text-slate-400 hover:text-blue-400 hover:border-blue-300  transition-all duration-300 shadow-lg hover:shadow-xl"
                   aria-label={social.label}
                 >
                   {social.icon}
@@ -152,19 +166,19 @@ const Hero = () => {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 1.5 }}
-            className="absolute bottom-8 left-1/2 transform -translate-x-1/2"
+            className="absolute bottom-6 left-1/2 transform -translate-x-1/2"
           >
             <Link
-              to="about"
+              to="projects"
               smooth={true}
               duration={500}
               offset={-70}
               className="flex flex-col items-center cursor-pointer group"
             >
-              <span className="text-sm text-slate-500 dark:text-slate-400 mb-2 group-hover:text-blue-600 dark:group-hover:text-blue-400 transition-colors">
-                Scroll down
+              <span className="text-xs sm:text-sm text-slate-400 mb-1 group-hover:text-blue-600 group-hover:text-blue-400 transition-colors">
+                View Projects
               </span>
-              <ArrowDown className="w-6 h-6 text-slate-400 dark:text-slate-500 group-hover:text-blue-600 dark:group-hover:text-blue-400 animate-bounce transition-colors" />
+              <ArrowDown className="w-5 h-5 text-slate-400 text-slate-500 group-hover:text-blue-600 group-hover:text-blue-400 animate-bounce transition-colors" />
             </Link>
           </motion.div>
         </div>

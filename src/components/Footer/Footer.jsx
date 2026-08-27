@@ -30,17 +30,17 @@ const Footer = () => {
     },
     {
       icon: <FileText className="w-6 h-6" />,
-      href: "https://drive.google.com/file/d/1XY8HNk1q3pQ-LPw7RmLqkhNadLPsud5E/view?usp=sharing",
+      href: "/RishabCV2026.pdf",
       label: "Resume"
     }
   ];
 
   const navLinks = [
     { name: "Home", to: "hero" },
-    { name: "About", to: "about" },
-    { name: "Skills", to: "skills" },
+    { name: "Projects", to: "projects" },
     { name: "Experience", to: "experience" },
-    { name: "Projects", to: "projects" }
+    { name: "Skills", to: "skills" },
+    { name: "About", to: "about" }
   ];
 
   const scrollToTop = () => {

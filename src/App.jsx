@@ -13,6 +13,7 @@ import Experience from "./components/Experience/Experience";
 import Footer from "./components/Footer/Footer";
 import Project from "./components/Projects/Project";
 import Contact from "./components/Contact/Contact";
+import WhatsAppButton from "./components/WhatsAppButton/WhatsAppButton";
 
 function App() {
   useEffect(() => {
@@ -27,24 +28,25 @@ function App() {
 
   return (
     <ThemeProvider>
-      <div className="min-h-screen bg-white dark:bg-slate-950 transition-colors duration-300">
+      <div className="min-h-screen bg-slate-950">
         <Toaster 
           position="top-right"
           toastOptions={{
-            className: 'dark:bg-slate-800 dark:text-white',
+            className: 'bg-slate-800 text-white',
             duration: 4000,
           }}
         />
         <Navbar />
         <main>
           <Hero />
-          <About />
-          <Skills />
-          <Experience />
           <Project />
+          <Experience />
+          <Skills />
+          <About />
           <Contact />
         </main>
         <Footer />
+        <WhatsAppButton />
       </div>
     </ThemeProvider>
   );

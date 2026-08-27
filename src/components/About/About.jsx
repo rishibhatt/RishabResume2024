@@ -44,25 +44,25 @@ const About = () => {
   const stats = [
     {
       label: "Years of Experience",
-      value: "3+",
+      value: "4+",
       icon: <Code className="w-6 h-6" />,
       color: "from-blue-500 to-cyan-500",
     },
     {
-      label: "Projects Completed",
-      value: "10+",
+      label: "Production Platforms",
+      value: "5+",
       icon: <Trophy className="w-6 h-6" />,
       color: "from-purple-500 to-pink-500",
     },
     {
-      label: "Technologies",
+      label: "Core Technologies",
       value: "15+",
       icon: <Zap className="w-6 h-6" />,
       color: "from-green-500 to-emerald-500",
     },
     {
-      label: "Coffee Consumed",
-      value: "∞",
+      label: "Code Commits",
+      value: "1,200+",
       icon: <Coffee className="w-6 h-6" />,
       color: "from-amber-500 to-orange-500",
     },
@@ -71,55 +71,55 @@ const About = () => {
   const skills = [
     {
       icon: <Code className="w-8 h-8" />,
-      title: "Frontend Development",
-      desc: "Building responsive and interactive web applications with React, Next.js, and modern CSS frameworks.",
+      title: "Frontend Architecture",
+      desc: "Building scalable, accessible, and high-performance web applications with React.js, Next.js, and TypeScript.",
       tech: ["React.js", "Next.js", "TypeScript", "TailwindCSS"],
     },
     {
       icon: <Palette className="w-8 h-8" />,
-      title: "UI/UX Design",
-      desc: "Creating beautiful and intuitive user interfaces that provide exceptional user experiences.",
-      tech: ["Figma", "Adobe XD", "Responsive Design", "User Research"],
-    },
-    {
-      icon: <Target className="w-8 h-8" />,
-      title: "Problem Solving",
-      desc: "Analytical thinking to break down complex problems and implement efficient solutions.",
-      tech: ["Algorithm Design", "Code Optimization", "Debugging", "Testing"],
+      title: "Web3 & Blockchain",
+      desc: "Smart contract integrations, wallet auth, multi-tier IDO sales, and real-time blockchain telemetry.",
+      tech: ["Ethers.js", "Web3.js", "MetaMask", "Token Staking"],
     },
     {
       icon: <Lightbulb className="w-8 h-8" />,
-      title: "Innovation",
-      desc: "Staying updated with latest technologies and implementing cutting-edge solutions.",
-      tech: ["Web3", "Blockchain", "Progressive Web Apps", "AI Integration"],
+      title: "AI & GenAI Solutions",
+      desc: "Integrating OpenAI APIs, AI SDKs, LLM streaming, prompt engineering, and document QA pipelines.",
+      tech: ["OpenAI APIs", "AI SDKs", "RAG", "Streaming APIs"],
+    },
+    {
+      icon: <Target className="w-8 h-8" />,
+      title: "Performance & SEO",
+      desc: "Core Web Vitals optimization, lazy loading, code splitting, dynamic meta tags, and accessibility.",
+      tech: ["Core Web Vitals", "SEO Metadata", "Redux", "REST APIs"],
     },
   ];
 
   const achievements = [
     {
       icon: <Award className="w-6 h-6" />,
-      title: "Radio Jockey @90.8 MHz",
+      title: "Radio Jockey @ 90.8 MHz",
       description:
-        "Hosted community shows during college, developing communication and presentation skills.",
+        "Hosted community shows at college radio station; developed exceptional communication and cross-functional leadership skills.",
     },
     {
       icon: <Trophy className="w-6 h-6" />,
-      title: "Idea Hunt Winner",
+      title: "Idea Hunt Startup Winner",
       description:
-        "Won startup idea competition organized by GradCapital for innovative business concept.",
+        "Won the prestigious startup idea competition organized by GradCapital for innovative tech concept.",
     },
     {
       icon: <BookOpen className="w-6 h-6" />,
-      title: "Continuous Learner",
+      title: "Continuous Learner & Mentor",
       description:
-        "Always exploring new technologies and sharing knowledge with the developer community.",
+        "B.Tech in Computer Science & Engineering from GNDEC Ludhiana with constant focus on cutting-edge Web3 & GenAI.",
     },
   ];
 
   return (
     <motion.section
       id="about"
-      className="py-20 bg-gradient-to-br from-slate-50 via-white to-blue-50 dark:from-slate-900 dark:via-slate-800 dark:to-blue-900/20 transition-colors duration-300"
+      className="py-20 bg-gradient-to-br from-slate-900 via-slate-800 to-blue-900/20 transition-colors duration-300"
       initial="hidden"
       animate="visible"
       variants={containerVariants}
@@ -136,13 +136,12 @@ const About = () => {
             About Me
           </motion.h2>
           <motion.p
-            className="text-lg text-slate-600 dark:text-slate-400 max-w-3xl mx-auto leading-relaxed"
+            className="text-lg text-slate-400 max-w-3xl mx-auto leading-relaxed"
             initial={{ y: 20, opacity: 0 }}
             whileInView={{ y: 0, opacity: 1 }}
             transition={{ duration: 0.6, delay: 0.2 }}
           >
-            Passionate Frontend Developer crafting digital experiences that
-            matter
+            Senior Frontend Engineer delivering scalable enterprise, Web3, and AI web applications
           </motion.p>
         </motion.div>
 
@@ -164,7 +163,7 @@ const About = () => {
                 <img
                   src={Rishi}
                   alt="Rishab Bhatt"
-                  className="relative w-full max-w-md mx-auto rounded-2xl object-cover border-4 border-white dark:border-slate-700 shadow-2xl"
+                  className="relative w-full max-w-md mx-auto rounded-2xl object-cover border-4 border-white border-slate-700 shadow-2xl"
                 />
               </div>
             </motion.div>
@@ -179,9 +178,8 @@ const About = () => {
               <div className="absolute top-4 left-4 text-4xl text-blue-400 opacity-30 font-serif">
                 "
               </div>
-              <p className="text-xl text-slate-700 dark:text-slate-300 italic font-medium relative z-10 pt-4 pb-4">
-                Driven by curiosity and creativity, I thrive on turning complex
-                problems into elegant solutions that make a real impact.
+              <p className="text-xl text-slate-300 italic font-medium relative z-10 pt-4 pb-4">
+                Driven by technical excellence and clean code, I build scalable frontend systems that convert complex requirements into intuitive user experiences.
               </p>
               <div className="absolute bottom-4 right-4 text-4xl text-blue-400 opacity-30 font-serif rotate-180">
                 "
@@ -196,31 +194,20 @@ const About = () => {
           >
             {/* Bio */}
             <div>
-              <h3 className="text-2xl md:text-3xl font-bold text-slate-800 dark:text-white mb-6 font-space-grotesk">
-                Frontend Developer & Creative Problem Solver
+              <h3 className="text-2xl md:text-3xl font-bold text-slate-800 text-white mb-6 font-space-grotesk">
+                Senior Frontend Engineer & Product Builder
               </h3>
-              <div className="space-y-4 text-slate-600 dark:text-slate-300 leading-relaxed">
+              <div className="space-y-4 text-slate-600 text-slate-300 leading-relaxed">
                 <p>
-                  With over 3 years of experience in frontend development, I
-                  specialize in creating responsive, user-friendly web
-                  applications using modern technologies like React.js, Next.js,
-                  and TailwindCSS. My journey in tech has been driven by a
-                  passion for combining technical excellence with creative
-                  design.
+                  With <span className="font-semibold text-white">4+ years of hands-on experience</span> in frontend engineering, I
+                  specialize in creating high-performance, accessible, and user-centric web
+                  applications using React.js, Next.js, TypeScript, and TailwindCSS.
                 </p>
                 <p>
-                  I believe in the power of clean code, thoughtful design, and
-                  continuous learning. My approach to development focuses on
-                  creating scalable solutions that not only meet current needs
-                  but also adapt to future requirements.
+                  I have led frontend delivery for <span className="font-semibold text-white">5+ production platforms</span> spanning Web3 DeFi protocols, AI/GenAI tools, industrial enterprise dashboards, and fintech token sale ecosystems. My focus centers on solid component architecture, Core Web Vitals optimization, and smooth API/smart-contract integration.
                 </p>
                 <p>
-                  Beyond coding, I bring unique perspectives from my experience
-                  as a Radio Jockey, which has enhanced my communication skills
-                  and ability to engage with diverse audiences. This combination
-                  of technical expertise and communication skills allows me to
-                  bridge the gap between complex technology and user-friendly
-                  experiences.
+                  Beyond engineering, my background as a radio host at 90.8 MHz brings sharp cross-functional communication and user-first empathy to every product I architect.
                 </p>
               </div>
             </div>
@@ -243,10 +230,10 @@ const About = () => {
                   >
                     {stat.icon}
                   </div>
-                  <div className="text-3xl font-bold text-slate-800 dark:text-white mb-1">
+                  <div className="text-3xl font-bold text-slate-800 text-white mb-1">
                     {stat.value}
                   </div>
-                  <div className="text-sm text-slate-600 dark:text-slate-400">
+                  <div className="text-sm text-slate-400">
                     {stat.label}
                   </div>
                 </motion.div>
@@ -264,7 +251,7 @@ const About = () => {
           viewport={{ once: true, amount: 0.2 }}
         >
           <motion.h3
-            className="text-3xl md:text-4xl font-bold text-center text-slate-800 dark:text-white mb-12 font-space-grotesk"
+            className="text-3xl md:text-4xl font-bold text-center text-slate-800 text-white mb-12 font-space-grotesk"
             variants={itemVariants}
           >
             What I Do Best
@@ -283,17 +270,17 @@ const About = () => {
                     {skill.icon}
                   </div>
                   <div className="flex-1">
-                    <h4 className="text-xl font-semibold text-slate-800 dark:text-white mb-3">
+                    <h4 className="text-xl font-semibold text-slate-800 text-white mb-3">
                       {skill.title}
                     </h4>
-                    <p className="text-slate-600 dark:text-slate-400 mb-4 leading-relaxed">
+                    <p className="text-slate-400 mb-4 leading-relaxed">
                       {skill.desc}
                     </p>
                     <div className="flex flex-wrap gap-2">
                       {skill.tech.map((tech, techIndex) => (
                         <span
                           key={techIndex}
-                          className="px-3 py-1 bg-blue-100 dark:bg-blue-900/30 text-blue-700 dark:text-blue-300 rounded-full text-sm font-medium"
+                          className="px-3 py-1 bg-blue-900/30 text-blue-300 rounded-full text-sm font-medium"
                         >
                           {tech}
                         </span>
@@ -314,7 +301,7 @@ const About = () => {
           viewport={{ once: true, amount: 0.2 }}
         >
           <motion.h3
-            className="text-3xl md:text-4xl font-bold text-center text-slate-800 dark:text-white mb-12 font-space-grotesk"
+            className="text-3xl md:text-4xl font-bold text-center text-slate-800 text-white mb-12 font-space-grotesk"
             variants={itemVariants}
           >
             Achievements & Recognition
@@ -331,10 +318,10 @@ const About = () => {
                 <div className="inline-flex items-center justify-center w-16 h-16 rounded-full bg-gradient-to-r from-green-500 to-emerald-500 text-white mb-4 group-hover:scale-110 transition-transform duration-200">
                   {achievement.icon}
                 </div>
-                <h4 className="text-lg font-semibold text-slate-800 dark:text-white mb-2">
+                <h4 className="text-lg font-semibold text-slate-800 text-white mb-2">
                   {achievement.title}
                 </h4>
-                <p className="text-slate-600 dark:text-slate-400 text-sm leading-relaxed">
+                <p className="text-slate-400 text-sm leading-relaxed">
                   {achievement.description}
                 </p>
               </motion.div>

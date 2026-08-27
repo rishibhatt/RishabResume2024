@@ -47,50 +47,50 @@ const Skills = () => {
       title: "Frontend Frameworks",
       icon: <Component className="w-6 h-6" />,
       color: "from-blue-500 to-cyan-500",
-      skills: ["React.js", "Next.js", "Vue.js", "Nuxt.js"]
+      skills: ["React.js", "Next.js", "Redux Toolkit", "Framer Motion"]
     },
     {
-      title: "Languages",
-      icon: <Code className="w-6 h-6" />,
-      color: "from-purple-500 to-pink-500",
-      skills: ["JavaScript", "TypeScript", "HTML5", "CSS3"]
-    },
-    {
-      title: "Styling & Design",
-      icon: <Palette className="w-6 h-6" />,
-      color: "from-green-500 to-emerald-500",
-      skills: ["TailwindCSS", "Material-UI", "Shadcn/ui", "SCSS"]
-    },
-    {
-      title: "Development Tools",
-      icon: <Terminal className="w-6 h-6" />,
-      color: "from-amber-500 to-orange-500",
-      skills: ["Git", "GitHub", "VS Code", "Vite"]
-    },
-    {
-      title: "Backend & Database",
-      icon: <Database className="w-6 h-6" />,
-      color: "from-red-500 to-pink-500",
-      skills: ["Node.js", "Express.js", "MongoDB", "MySQL"]
-    },
-    {
-      title: "Additional Tools",
+      title: "AI & GenAI",
       icon: <Zap className="w-6 h-6" />,
-      color: "from-indigo-500 to-purple-500",
-      skills: ["Figma", "Framer Motion", "Axios", "REST APIs"]
+      color: "from-purple-500 to-pink-500",
+      skills: ["OpenAI APIs", "LLM Integration", "AI SDKs", "RAG & Prompt Engineering"]
+    },
+    {
+      title: "Web3 & Blockchain",
+      icon: <Globe className="w-6 h-6" />,
+      color: "from-emerald-500 to-teal-500",
+      skills: ["Web3.js", "Ethers.js", "MetaMask Auth", "Smart Contract Calls"]
+    },
+    {
+      title: "Languages & Types",
+      icon: <Code className="w-6 h-6" />,
+      color: "from-amber-500 to-orange-500",
+      skills: ["TypeScript", "JavaScript (ES6+)", "HTML5", "CSS3 / SCSS"]
+    },
+    {
+      title: "Styling & UI Systems",
+      icon: <Palette className="w-6 h-6" />,
+      color: "from-pink-500 to-rose-500",
+      skills: ["TailwindCSS", "Material-UI", "Shadcn/UI", "Responsive Design"]
+    },
+    {
+      title: "Backend, DB & Tools",
+      icon: <Database className="w-6 h-6" />,
+      color: "from-indigo-500 to-violet-500",
+      skills: ["Node.js", "Express.js", "MongoDB", "Git & GitHub"]
     }
   ];
 
   const featuredSkills = [
     "React.js", "Next.js", "TypeScript", "TailwindCSS", 
-    "Material-UI", "Shadcn/ui", "JavaScript", "Node.js",
-    "Framer Motion", "Git", "MongoDB", "Figma"
+    "OpenAI APIs", "AI SDKs", "Web3.js", "Ethers.js",
+    "Redux", "Node.js", "Framer Motion", "Git"
   ];
 
   return (
     <motion.section
       id="skills"
-      className="py-20 bg-gradient-to-br from-slate-50 via-white to-blue-50 dark:from-slate-900 dark:via-slate-800 dark:to-blue-900/20 transition-colors duration-300"
+      className="py-20 bg-gradient-to-br from-slate-900 via-slate-800 to-blue-900/20 transition-colors duration-300"
       variants={containerVariants}
       initial="hidden"
       whileInView="visible"
@@ -108,7 +108,7 @@ const Skills = () => {
             Technical Skills
           </motion.h2>
           <motion.p
-            className="text-lg text-slate-600 dark:text-slate-400 max-w-3xl mx-auto leading-relaxed"
+            className="text-lg text-slate-400 max-w-3xl mx-auto leading-relaxed"
             initial={{ y: 20, opacity: 0 }}
             whileInView={{ y: 0, opacity: 1 }}
             transition={{ duration: 0.6, delay: 0.2 }}
@@ -123,7 +123,7 @@ const Skills = () => {
           variants={itemVariants}
         >
           <motion.h3
-            className="text-2xl md:text-3xl font-bold text-center text-slate-800 dark:text-white mb-12 font-space-grotesk"
+            className="text-2xl md:text-3xl font-bold text-center text-slate-800 text-white mb-12 font-space-grotesk"
             variants={itemVariants}
           >
             Core Technologies
@@ -139,7 +139,7 @@ const Skills = () => {
                 whileTap={{ scale: 0.95 }}
                 custom={index}
               >
-                <span className="text-slate-700 dark:text-slate-300 font-medium group-hover:text-blue-600 dark:group-hover:text-blue-400 transition-colors duration-300">
+                <span className="text-slate-300 font-medium group-hover:text-blue-600 group-hover:text-blue-400 transition-colors duration-300">
                   {skill}
                 </span>
               </motion.div>
@@ -163,7 +163,7 @@ const Skills = () => {
                 <div className={`p-3 rounded-xl bg-gradient-to-r ${category.color} text-white group-hover:scale-110 transition-transform duration-300`}>
                   {category.icon}
                 </div>
-                <h4 className="text-xl font-semibold text-slate-800 dark:text-white font-space-grotesk">
+                <h4 className="text-xl font-semibold text-slate-800 text-white font-space-grotesk">
                   {category.title}
                 </h4>
               </div>
@@ -172,11 +172,11 @@ const Skills = () => {
                 {category.skills.map((skill, skillIndex) => (
                   <motion.div
                     key={skillIndex}
-                    className="flex items-center gap-3 p-3 rounded-lg bg-slate-50 dark:bg-slate-700/50 hover:bg-blue-50 dark:hover:bg-blue-900/20 transition-colors duration-200 group/skill"
+                    className="flex items-center gap-3 p-3 rounded-lg bg-slate-50 bg-slate-700/50 hover:bg-blue-900/20 transition-colors duration-200 group/skill"
                     whileHover={{ x: 4 }}
                   >
                     <div className="w-2 h-2 rounded-full bg-gradient-to-r from-blue-500 to-purple-500 group-hover/skill:scale-125 transition-transform duration-200" />
-                    <span className="text-slate-700 dark:text-slate-300 font-medium">
+                    <span className="text-slate-300 font-medium">
                       {skill}
                     </span>
                   </motion.div>
@@ -194,7 +194,7 @@ const Skills = () => {
           transition={{ duration: 0.6, delay: 0.4 }}
         >
           <motion.p
-            className="text-lg text-slate-600 dark:text-slate-400 max-w-2xl mx-auto"
+            className="text-lg text-slate-400 max-w-2xl mx-auto"
             whileHover={{ scale: 1.02 }}
           >
             Always learning and exploring new technologies to create better digital experiences.

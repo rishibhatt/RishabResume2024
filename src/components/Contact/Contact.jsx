@@ -71,7 +71,7 @@ const Contact = () => {
       icon: <Github className="w-6 h-6" />,
       name: "GitHub",
       url: "https://github.com/rishibhatt",
-      color: "hover:text-gray-800 dark:hover:text-gray-200"
+      color: "hover:text-gray-800 hover:text-gray-200"
     },
     {
       icon: <Linkedin className="w-6 h-6" />,
@@ -109,7 +109,7 @@ const Contact = () => {
   };
 
   return (
-    <section id="contact" className="py-20 px-4 bg-slate-50 dark:bg-slate-900/50">
+    <section id="contact" className="py-20 px-4 bg-slate-900/50">
       <div className="max-w-6xl mx-auto">
         <motion.div
           initial="hidden"
@@ -126,7 +126,7 @@ const Contact = () => {
           </motion.h2>
           <motion.p 
             variants={itemVariants}
-            className="text-xl text-slate-600 dark:text-slate-400 max-w-2xl mx-auto"
+            className="text-xl text-slate-400 max-w-2xl mx-auto"
           >
             I'm always open to discussing new opportunities and interesting projects. 
             Let's create something amazing together!
@@ -142,12 +142,12 @@ const Contact = () => {
             variants={itemVariants}
             className="glass-effect rounded-2xl p-8"
           >
-            <h3 className="text-2xl font-bold mb-6 text-slate-800 dark:text-slate-200">
+            <h3 className="text-2xl font-bold mb-6 text-slate-200">
               Send me a message
             </h3>
             <form onSubmit={handleSubmit} className="space-y-6">
               <div>
-                <label htmlFor="name" className="block text-sm font-medium text-slate-700 dark:text-slate-300 mb-2">
+                <label htmlFor="name" className="block text-sm font-medium text-slate-300 mb-2">
                   Your Name
                 </label>
                 <input
@@ -157,12 +157,12 @@ const Contact = () => {
                   value={formData.name}
                   onChange={handleChange}
                   required
-                  className="w-full px-4 py-3 rounded-lg bg-white dark:bg-slate-800 border border-slate-300 dark:border-slate-600 focus:border-blue-500 focus:ring-2 focus:ring-blue-500/20 transition-all duration-300"
+                  className="w-full px-4 py-3 rounded-lg bg-slate-800 border border-slate-600 focus:border-blue-500 focus:ring-2 focus:ring-blue-500/20 transition-all duration-300"
                   placeholder="John Doe"
                 />
               </div>
               <div>
-                <label htmlFor="email" className="block text-sm font-medium text-slate-700 dark:text-slate-300 mb-2">
+                <label htmlFor="email" className="block text-sm font-medium text-slate-300 mb-2">
                   Email Address
                 </label>
                 <input
@@ -172,12 +172,12 @@ const Contact = () => {
                   value={formData.email}
                   onChange={handleChange}
                   required
-                  className="w-full px-4 py-3 rounded-lg bg-white dark:bg-slate-800 border border-slate-300 dark:border-slate-600 focus:border-blue-500 focus:ring-2 focus:ring-blue-500/20 transition-all duration-300"
+                  className="w-full px-4 py-3 rounded-lg bg-slate-800 border border-slate-600 focus:border-blue-500 focus:ring-2 focus:ring-blue-500/20 transition-all duration-300"
                   placeholder="john@example.com"
                 />
               </div>
               <div>
-                <label htmlFor="message" className="block text-sm font-medium text-slate-700 dark:text-slate-300 mb-2">
+                <label htmlFor="message" className="block text-sm font-medium text-slate-300 mb-2">
                   Message
                 </label>
                 <textarea
@@ -187,7 +187,7 @@ const Contact = () => {
                   onChange={handleChange}
                   required
                   rows={5}
-                  className="w-full px-4 py-3 rounded-lg bg-white dark:bg-slate-800 border border-slate-300 dark:border-slate-600 focus:border-blue-500 focus:ring-2 focus:ring-blue-500/20 transition-all duration-300 resize-none"
+                  className="w-full px-4 py-3 rounded-lg bg-slate-800 border border-slate-600 focus:border-blue-500 focus:ring-2 focus:ring-blue-500/20 transition-all duration-300 resize-none"
                   placeholder="Tell me about your project..."
                 />
               </div>
@@ -213,7 +213,7 @@ const Contact = () => {
           >
             {/* Contact Information */}
             <div className="glass-effect rounded-2xl p-8">
-              <h3 className="text-2xl font-bold mb-6 text-slate-800 dark:text-slate-200">
+              <h3 className="text-2xl font-bold mb-6 text-slate-200">
                 Get in touch
               </h3>
               <div className="space-y-4">
@@ -223,14 +223,14 @@ const Contact = () => {
                     href={info.link}
                     variants={itemVariants}
                     whileHover={{ x: 5 }}
-                    className="flex items-center gap-4 p-3 rounded-lg hover:bg-slate-100 dark:hover:bg-slate-800/50 transition-all duration-300 group"
+                    className="flex items-center gap-4 p-3 rounded-lg hover:bg-slate-800/50 transition-all duration-300 group"
                   >
-                    <div className="p-2 rounded-lg bg-blue-100 dark:bg-blue-900/20 text-blue-600 dark:text-blue-400 group-hover:scale-110 transition-transform">
+                    <div className="p-2 rounded-lg bg-blue-900/20 text-blue-400 group-hover:scale-110 transition-transform">
                       {info.icon}
                     </div>
                     <div>
-                      <p className="font-medium text-slate-800 dark:text-slate-200">{info.title}</p>
-                      <p className="text-slate-600 dark:text-slate-400">{info.value}</p>
+                      <p className="font-medium text-slate-200">{info.title}</p>
+                      <p className="text-slate-400">{info.value}</p>
                     </div>
                   </motion.a>
                 ))}
@@ -239,7 +239,7 @@ const Contact = () => {
 
             {/* Social Links */}
             <div className="glass-effect rounded-2xl p-8">
-              <h3 className="text-2xl font-bold mb-6 text-slate-800 dark:text-slate-200">
+              <h3 className="text-2xl font-bold mb-6 text-slate-200">
                 Follow me
               </h3>
               <div className="flex gap-4">
@@ -251,7 +251,7 @@ const Contact = () => {
                     rel="noopener noreferrer"
                     whileHover={{ scale: 1.1, y: -2 }}
                     whileTap={{ scale: 0.95 }}
-                    className={`p-3 rounded-xl bg-slate-100 dark:bg-slate-800 text-slate-600 dark:text-slate-400 ${social.color} transition-all duration-300 hover:shadow-lg`}
+                    className={`p-3 rounded-xl bg-slate-800 text-slate-400 ${social.color} transition-all duration-300 hover:shadow-lg`}
                   >
                     {social.icon}
                   </motion.a>
@@ -262,12 +262,12 @@ const Contact = () => {
             {/* Fun Fact */}
             <motion.div
               variants={itemVariants}
-              className="glass-effect rounded-2xl p-8 bg-gradient-to-br from-blue-50 to-purple-50 dark:from-blue-900/20 dark:to-purple-900/20"
+              className="glass-effect rounded-2xl p-8 bg-gradient-to-br from-blue-50 to-purple-50 from-blue-900/20 to-purple-900/20"
             >
-              <h3 className="text-xl font-bold mb-3 text-slate-800 dark:text-slate-200">
+              <h3 className="text-xl font-bold mb-3 text-slate-200">
                 Fun Fact 🎯
               </h3>
-              <p className="text-slate-600 dark:text-slate-400">
+              <p className="text-slate-400">
                 I'm not just a developer - I was also a Radio Jockey at 90.8 MHz during college! 
                 From engaging audiences on air to creating engaging user experiences, 
                 I bring creativity to everything I do.
