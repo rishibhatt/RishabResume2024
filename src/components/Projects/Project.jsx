@@ -12,8 +12,31 @@ import {
 // ─── Project Data ───────────────────────────────────────────────────────────────
 const PROJECTS = [
   {
-    id: "velvet",
+    id: "h12-school",
     number: "01",
+    title: "H-12 Academy",
+    subtitle: "Bilingual K-12 Institutional Platform & Commercial Starter",
+    description:
+      "An editorial-grade, bilingual educational platform engineered as a customizable commercial starter for K-12 institutions. Built with Next.js 16 App Router, TypeScript, Tailwind CSS v4, and GSAP 3, featuring division portals, faculty directory, and an enrollment-driven admissions engine.",
+    badge: "Commercial Starter",
+    url: "https://h12academy.netlify.app/",
+    embedUrl: "https://h12academy.netlify.app/",
+    screenshotUrl: null,
+    previewImg: "/h12.png",
+    accent: "#c89b3c",
+    accentTo: "#0b1b2b",
+    tagBg: "bg-amber-500/20 text-amber-300 border-amber-500/30",
+    glowColor: "rgba(200,155,60,0.18)",
+    tech: ["Next.js 16", "TypeScript 5.9", "Tailwind v4", "GSAP 3", "i18n (EN/HI)"],
+    highlights: [
+      "26 static pre-rendered routes with sub-second page loads (Lighthouse 95+)",
+      "Zero-hydration native bilingual localization (English & Hindi) with Devanagari tuning",
+      "Interactive multi-step admissions funnel with CRM layer (HubSpot / Salesforce ready)",
+    ],
+  },
+  {
+    id: "velvet",
+    number: "02",
     title: "Velvet",
     subtitle: "Visual Curation & Collaborative Moodboard Platform",
     description:
@@ -37,7 +60,7 @@ const PROJECTS = [
   },
   {
     id: "api-forge",
-    number: "02",
+    number: "03",
     title: "API Forge",
     subtitle: "AI-Powered API Design & Testing Platform",
     description:
@@ -60,7 +83,7 @@ const PROJECTS = [
   },
   {
     id: "encrypted-cash",
-    number: "03",
+    number: "04",
     title: "Encrypted Cash",
     subtitle: "Decentralized Crypto Transaction & ICO Platform",
     description:
@@ -83,7 +106,7 @@ const PROJECTS = [
   },
   {
     id: "dossier",
-    number: "04",
+    number: "05",
     title: "Dossier",
     subtitle: "AI Resume-to-Portfolio Generation Engine",
     description:

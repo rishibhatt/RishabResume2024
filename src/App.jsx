@@ -12,11 +12,23 @@ import Footer from "./site/Footer";
 
 export default function App() {
   const [ready, setReady] = useState(false);
-  const done = useCallback(() => setReady(true), []);
+  const done = useCallback(() => {
+    document.documentElement.style.overflow = "";
+    setReady(true);
+  }, []);
 
   useEffect(() => {
     document.fonts?.ready.then(() => ScrollTrigger.refresh());
   }, []);
+
+  useEffect(() => {
+    if (ready && window.location.hash) {
+      setTimeout(() => {
+        const el = document.querySelector(window.location.hash);
+        if (el) el.scrollIntoView();
+      }, 150);
+    }
+  }, [ready]);
 
   return (
     <>

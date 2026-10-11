@@ -47,7 +47,10 @@ export default function Loader({ onDone }) {
       master.to(".loader__sig", { scale: 1.04, duration: 0.5, ease: "power2.out" }, ">-0.1");
       master.to(".loader__sig", { y: -24, opacity: 0, duration: 0.45, ease: "power2.in" }, ">+0.35");
       master.to(".loader__meta", { opacity: 0, duration: 0.3 }, "<");
-      master.add(() => onDone(), ">-0.1");
+      master.add(() => {
+        html.style.overflow = "";
+        onDone();
+      }, ">-0.1");
       master.to(
         root.current,
         { clipPath: "inset(0 0 100% 0)", duration: 1, ease: "expo.inOut" },
