@@ -4,7 +4,7 @@ import Signature from "./Signature";
 
 const SEEN = "rb-intro-seen";
 
-export default function Loader({ onDone }) {
+export default function Loader({ onDone, enabled = true }) {
   const root = useRef(null);
   const sig = useRef(null);
   const [gone, setGone] = useState(false);
@@ -17,7 +17,7 @@ export default function Loader({ onDone }) {
     } catch {
       /* storage blocked */
     }
-    if (reduceMotion() || seen) {
+    if (!enabled || reduceMotion() || seen) {
       setGone(true);
       onDone();
       return;
@@ -78,7 +78,7 @@ export default function Loader({ onDone }) {
         <Signature ref={sig} className="sig--hero" />
       </div>
       <p className="loader__meta loader__meta--l">Rishab Bhatt</p>
-      <p className="loader__meta loader__meta--r">Frontend and AI engineer</p>
+      <p className="loader__meta loader__meta--r">Product engineer</p>
       <p className="loader__meta loader__meta--b">Tap to skip</p>
     </div>
   );

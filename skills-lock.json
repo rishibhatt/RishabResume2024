@@ -43,6 +43,12 @@
       "skillPath": "skills/attribution/SKILL.md",
       "computedHash": "9a8af63f4eb9820eb2fce6d83c58506f4b7f39a5470c345c2633e99793c1b2b4"
     },
+    "build-awwwards-quality-sites": {
+      "source": "mengto/skills",
+      "sourceType": "github",
+      "skillPath": "agent-skills/web-design/build-awwwards-quality-sites/SKILL.md",
+      "computedHash": "5a1bb2b382c617361c7984c036a834b4153f9160bcb84fa189d005a9e192a2ac"
+    },
     "churn-prevention": {
       "source": "coreyhaines31/marketingskills",
       "sourceType": "github",

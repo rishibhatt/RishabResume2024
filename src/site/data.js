@@ -3,6 +3,8 @@ export const wa = (msg) =>
   `https://wa.me/${WA_NUMBER}?text=${encodeURIComponent(msg)}`;
 
 export const SITE = "https://rishieee.netlify.app";
+export const mail = (subject, body = "") =>
+  `mailto:bhattrishu07@gmail.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
 export const EMAIL = "bhattrishu07@gmail.com";
 
 export const LINKS = {
@@ -26,6 +28,8 @@ export const CATEGORIES = [
 export const PROJECTS = [
   {
     id: "h12",
+    line: "A finished, bilingual school website with an admissions enquiry engine.",
+    tags: ["Next.js 16","Bilingual EN/HI","GSAP"],
     n: "01",
     name: "H-12 Academy",
     domain: "h12academy.netlify.app",
@@ -34,16 +38,18 @@ export const PROJECTS = [
     d: "/shots/h12-d.webp",
     m: "/shots/h12-m.webp",
     hue: "oklch(76% 0.16 80)",
-    kind: "Commercial Starter · Demo",
-    badge: "Ready to License & Deploy",
+    type: "product",
+    kind: "Website for schools",
+    badge: "Ready to launch",
     category: "starters",
-    tagline: "Academic prestige meets a conversion-tuned admissions engine.",
+    tagline: "A school website that turns parents into admission enquiries.",
     plain:
-      "A complete, bilingual digital campus engineered for private schools and academies. Parents get dedicated division portals from Kindergarten to Grade 12, an interactive multi-step admissions inquiry form, and zero PDF hunting.",
+      "Parents compare schools online before they ever call. H-12 gives yours a site that answers their questions, shows the campus properly and walks them through an admissions enquiry step by step. It switches between English and Hindi in one tap and loads fast on a phone.",
     wins: [
-      "26 static pre-rendered routes with sub-second page loads",
-      "Native English & Hindi localization with instant client switching",
-      "Conversion-tuned admissions funnel with automated inquiry reference codes",
+      "A page for each division, Kindergarten to Grade 12",
+      "English and Hindi, switched in one tap",
+      "Every enquiry gets a reference code your office can track",
+      "Faculty, roadmap, gallery and noticeboard pages included",
     ],
     body:
       "An editorial-grade institutional platform built with Next.js 16 App Router, TypeScript 5.9, Tailwind CSS v4, and GSAP 3. Includes division portals (K–5, 6–8, 9–12), strategic 2026–2030 roadmap, faculty directory, and an abstract CRM layer ready for HubSpot or Salesforce.",
@@ -97,8 +103,10 @@ export const PROJECTS = [
       turnaround: "7 to 14 business days from content handover to production edge launch.",
     },
     quote: {
-      headline: "Deploy a Modern School Platform in 10 Days",
-      subhead: "Fixed scope, clear deliverables, guaranteed Lighthouse 90+ performance, and complete source code ownership.",
+      headline: "Get your school online before the next admissions season",
+      subhead: "Fixed price. Fixed timeline. You own the code. Choose a package, add what you need, and see the total before you message me.",
+      care: { name: "Care plan", usdMonth: 49, inrMonth: 3999, usdYear: 490, inrYear: 39990, note: "Hosting checks, security updates and small content changes, so the site stays current after launch." },
+      payment: "50% to start, 50% when you approve the live site.",
       packages: [
         {
           id: "admissions-lite",
@@ -164,6 +172,8 @@ export const PROJECTS = [
   },
   {
     id: "apiforge",
+    line: "Paste an OpenAPI spec. It tests the API, scores it and writes the types.",
+    tags: ["Next.js","OpenAI","TypeScript"],
     n: "02",
     name: "API Forge",
     domain: "apiforge.info",
@@ -172,16 +182,17 @@ export const PROJECTS = [
     d: "/shots/apiforge-d.webp",
     m: "/shots/apiforge-m.webp",
     hue: "oklch(78% 0.13 225)",
-    kind: "AI Product",
-    badge: "Live Production App",
+    type: "personal",
+    kind: "Personal project",
+    badge: "Built by me, not for sale",
     category: "ai",
-    tagline: "Describe an endpoint. Get a tested API.",
+    tagline: "Paste an API spec. Get it tested and graded.",
     plain:
-      "Developers lose hours wiring up and testing APIs. Here you type what you need in normal English and the tool sets it up, tests it and tells you how fast it is.",
+      "If you build or use APIs, API Forge checks one in seconds. It reads the spec, sends test requests, scores the design from 0 to 100 and writes the TypeScript types for you.",
     wins: [
-      "Type a sentence, get a working setup",
-      "Checks the result automatically",
-      "Shows speed in real time",
+      "Works from a spec link or a pasted file",
+      "Sends test requests without CORS errors",
+      "Generates TypeScript types and tests",
     ],
     body: "Plain English in, configured REST endpoint out. API Forge runs live tests, validates the JSON schema and benchmarks latency.",
     points: [
@@ -204,6 +215,8 @@ export const PROJECTS = [
   },
   {
     id: "dossier",
+    line: "Upload a resume PDF. Get a portfolio site and a link to share.",
+    tags: ["Next.js","AI parsing","Templates"],
     n: "03",
     name: "Dossier",
     domain: "dossier-cv.com",
@@ -212,16 +225,17 @@ export const PROJECTS = [
     d: "/shots/dossier-d.webp",
     m: "/shots/dossier-m.webp",
     hue: "oklch(84% 0.14 172)",
-    kind: "AI Product",
-    badge: "Live Production App",
+    type: "personal",
+    kind: "Personal project",
+    badge: "Built by me, not for sale",
     category: "ai",
-    tagline: "Resume in. Live portfolio out.",
+    tagline: "Your resume, set as a website.",
     plain:
-      "You upload your resume and get a professional website in minutes. No design skills, no coding, and a link you can send to anyone.",
+      "Upload the PDF you already have. Dossier lays it out as a portfolio site, lets you try different looks, and gives you a link to share.",
     wins: [
-      "Upload once, site is ready",
-      "Pick a look and see it live",
-      "One click to get your own link",
+      "Upload a PDF, no design skills needed",
+      "Try looks until one feels like you",
+      "Publish a link you can send to anyone",
     ],
     body: "Dossier's AI reads a resume, pulls out every project and skill, then builds a shareable portfolio with SEO built in.",
     points: [
@@ -244,6 +258,8 @@ export const PROJECTS = [
   },
   {
     id: "velvet",
+    line: "Shared moodboards. Paste a link, everyone sees it live.",
+    tags: ["Next.js","Supabase","Realtime"],
     n: "04",
     name: "Velvet",
     domain: "the-velvet.netlify.app",
@@ -252,12 +268,13 @@ export const PROJECTS = [
     d: "/shots/velvet-d.webp",
     m: "/shots/velvet-m.webp",
     hue: "oklch(76% 0.13 300)",
-    kind: "SaaS Platform",
-    badge: "Live Production Platform",
+    type: "personal",
+    kind: "Personal project",
+    badge: "Built by me, not for sale",
     category: "saas",
     tagline: "Moodboards your whole team builds together.",
     plain:
-      "A shared pinboard for ideas. Paste any link and it becomes a neat card on a board your team can add to, tag and like together.",
+      "Save inspiration from any link onto a shared board. Everyone sees new additions as they happen, and you decide who can view or edit.",
     wins: [
       "Paste a link, get a preview card",
       "Everyone edits the same board live",
@@ -286,53 +303,28 @@ export const PROJECTS = [
 
 export const SERVICES = [
   {
-    n: "01",
-    title: "School & Institutional platform",
-    plain: "A full bilingual portal for your school, college or academy. Admissions inquiry engine, division portals and mobile-ready.",
-    tech: ["Next.js 16", "i18n (EN/HI)", "Admissions Funnel"],
-    topic: "an institutional or school website",
+    title: "Websites and landing pages",
+    plain: "A site that explains what you do, looks right on every phone and gets the enquiry. For schools, studios, clinics, shops and launches.",
+    tech: ["Next.js", "React", "SEO", "GSAP"],
+    topic: "a website or landing page",
   },
   {
-    n: "02",
-    title: "Online store",
-    plain: "Sell your products on your own website, with a cart, payments and order tracking.",
+    title: "Online stores",
+    plain: "Sell your products on your own site, with a cart, payments and an order view you can actually use.",
     tech: ["Next.js", "Payment gateway", "Admin dashboard"],
     topic: "an online store",
   },
   {
-    n: "03",
-    title: "Portfolio website",
-    plain: "A personal site that shows your work properly and gets you hired or booked.",
-    tech: ["React", "GSAP animation", "SEO"],
-    topic: "a portfolio website",
-  },
-  {
-    n: "04",
-    title: "Landing page",
-    plain: "One focused page to launch an offer, event or app and collect sign-ups.",
-    tech: ["Next.js", "Fast load", "Analytics"],
-    topic: "a landing page",
-  },
-  {
-    n: "05",
-    title: "Business website",
-    plain: "Your shop, studio or clinic online. Services, contact form and easy to find on Google.",
-    tech: ["CMS", "SEO", "Forms"],
-    topic: "a business website",
-  },
-  {
-    n: "06",
-    title: "AI tool",
-    plain: "A chatbot, writing helper or document reader built into your product or business.",
-    tech: ["OpenAI API", "Streaming", "Prompt design"],
+    title: "AI features and tools",
+    plain: "A chatbot, a writing helper or a document reader inside your product, wired to real data and built to hold up in daily use.",
+    tech: ["OpenAI API", "Streaming", "TypeScript"],
     topic: "an AI-powered tool",
   },
   {
-    n: "07",
-    title: "Web3 app or dashboard",
-    plain: "Crypto wallet login, staking screens, live numbers and the admin panels behind them.",
-    tech: ["Web3.js", "MetaMask", "Supabase"],
-    topic: "a Web3 app or dashboard",
+    title: "Web apps, dashboards and Web3",
+    plain: "The screens your team or customers log in to. Live numbers, admin panels, wallet login and staking views.",
+    tech: ["React", "Supabase", "Web3.js", "Dashboards"],
+    topic: "a web app, dashboard or Web3 product",
   },
 ];
 
@@ -355,3 +347,31 @@ export const STACK = [
  *  X:        the number at the end of the tweet URL  ->  { platform: "x", id: "1780000000000000000" }
  */
 export const POSTS = [];
+
+export const PRODUCT_STEPS = [
+  { t: "Pick a package", d: "Choose the one closest to your school. Add anything extra, and see the total before you message me." },
+  { t: "Send your content", d: "Logo, text and photos. A simple checklist tells you exactly what to send." },
+  { t: "Review the live site", d: "You get a private link within 10 business days of sending content. Ask for changes, then we launch." },
+];
+
+export const PRODUCT_FAQ = [
+  { q: "Who owns the website?", a: "You do. The full source code is transferred to your own GitHub account when we launch." },
+  { q: "How long does it take?", a: "7 to 21 business days depending on the package, counted from the day I receive your content." },
+  { q: "Can I see it before I buy?", a: "Yes. The H-12 demo is live. Open it on your phone and on a computer, then decide." },
+  { q: "Is hosting included?", a: "Domain setup, SSL and launch on Netlify or Vercel are included in every package." },
+  { q: "My school is not a school. Can you build one for my business?", a: "Yes. Message me what you run and I will tell you the simplest way to build it. New ready-to-launch sites are added here as I finish them." },
+];
+
+/** The sellable offer. Everything here is shown on the page, so keep it true. */
+export const OFFER = {
+  name: "H-12 School Website",
+  bonuses: [
+    { t: "Admissions enquiry engine", d: "Step-by-step form, a reference code for every enquiry, ready to connect to your CRM." },
+    { t: "English and Hindi", d: "One tap to switch. A second language pair can be added." },
+    { t: "26 pages built and tested", d: "Divisions, faculty, roadmap, gallery, events and noticeboard." },
+    { t: "Staff handover guide", d: "So your office team knows how to run it (Campus package and above)." },
+    { t: "You own the code", d: "Transferred to your GitHub account when we launch." },
+  ],
+  guarantee: "A private live link within 10 business days of receiving your content, or $200 comes off the price.",
+  free: "Send me your school's current website link. I'll reply with the three changes most likely to bring in more admission enquiries.",
+};

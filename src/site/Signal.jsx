@@ -1,11 +1,10 @@
 import { useEffect, useMemo, useRef, useState } from "react";
-import { gsap, useGSAP } from "./gsap";
+import { gsap, useGSAP, reduceMotion } from "./gsap";
 import { LINKS, POSTS } from "./data";
 import { Arrow } from "./icons";
+import Split from "./Split";
 
-const fmt = (d) =>
-  new Date(d + "T00:00:00").toLocaleDateString("en", { day: "numeric", month: "short", year: "numeric" });
-
+const fmt = (d) => new Date(d + "T00:00:00").toLocaleDateString("en", { day: "numeric", month: "short", year: "numeric" });
 const ago = (iso) => {
   const s = (Date.now() - new Date(iso)) / 1000;
   if (s < 3600) return `${Math.max(1, Math.round(s / 60))}m ago`;
@@ -16,7 +15,6 @@ const ago = (iso) => {
 function useGithub() {
   const [graph, setGraph] = useState({ state: "loading" });
   const [events, setEvents] = useState([]);
-
   useEffect(() => {
     const ac = new AbortController();
     fetch(`https://github-contributions-api.jogruber.de/v4/${LINKS.githubUser}?y=last`, { signal: ac.signal })
@@ -45,70 +43,49 @@ function useGithub() {
   return { graph, events };
 }
 
-function stats(days) {
-  let best = days[0];
-  let streak = 0, longest = 0;
-  for (const d of days) {
-    if (d.count > best.count) best = d;
-    streak = d.count ? streak + 1 : 0;
-    longest = Math.max(longest, streak);
-  }
-  return { best, longest };
-}
-
 export default function Signal() {
   const root = useRef(null);
   const [tip, setTip] = useState(null);
   const { graph, events } = useGithub();
-  const st = useMemo(() => (graph.state === "ok" && graph.days.length ? stats(graph.days) : null), [graph]);
+  const best = useMemo(() => (graph.state === "ok" && graph.days.length ? graph.days.reduce((a, d) => (d.count > a.count ? d : a), graph.days[0]) : null), [graph]);
   const lead = useMemo(() => (graph.state === "ok" ? new Date(graph.days[0].date + "T00:00:00").getDay() : 0), [graph]);
 
   useGSAP(
     () => {
-      if (graph.state !== "ok") return;
-      gsap.from(".cell", {
-        scale: 0,
-        opacity: 0,
-        duration: 0.5,
-        ease: "back.out(2)",
-        stagger: { each: 0.0035, from: "start" },
-        scrollTrigger: { trigger: ".graph", start: "top 85%", once: true },
-      });
-      gsap.from(".count", {
-        textContent: 0,
-        duration: 1.6,
-        ease: "power2.out",
-        snap: { textContent: 1 },
-        scrollTrigger: { trigger: ".graph", start: "top 85%", once: true },
-      });
+      if (graph.state !== "ok" || reduceMotion()) return;
+      gsap.from(".cell", { opacity: 0, scale: 0.4, duration: 0.5, ease: "power3.out", stagger: { each: 0.003 }, scrollTrigger: { trigger: ".graph", start: "top 88%", once: true } });
+      gsap.from(".count", { textContent: 0, duration: 1.4, ease: "power2.out", snap: { textContent: 1 }, scrollTrigger: { trigger: ".graph", start: "top 88%", once: true } });
     },
     { scope: root, dependencies: [graph.state] }
   );
 
   return (
-    <section ref={root} id="signal" className="sig-sec">
+    <section ref={root} id="proof" className="sec proof">
       <div className="wrap">
-        <h2 className="eyebrow eyebrow--dark">Shipping in public</h2>
-        <div className="sig-sec__head">
-          <p className="sig-sec__big">
-            {graph.state === "ok" ? (
-              <>
-                <span className="count">{graph.total}</span> contributions
-                <br />
-                in the last year.
-              </>
-            ) : (
-              <>Code goes up on GitHub most days.</>
-            )}
-          </p>
-          <a className="btn btn--ink mag" href={LINKS.github} target="_blank" rel="noopener noreferrer">
-            Follow on GitHub <Arrow />
-          </a>
-        </div>
+        <header className="proof__head">
+          <div>
+            <p className="eyebrow">Activity</p>
+            <h2 className="display h2 proof__big" style={{ marginTop: "1.2rem" }}>
+              {graph.state === "ok" ? (
+                <>
+                  <span className="count">{graph.total}</span> contributions
+                  <br />
+                  in the last year.
+                </>
+              ) : (
+                <>I ship in public on GitHub.</>
+              )}
+            </h2>
+          </div>
+          <div style={{ display: "flex", gap: "0.7rem", flexWrap: "wrap" }}>
+            <a className="btn" href={LINKS.github} target="_blank" rel="noopener noreferrer">GitHub <Arrow width="16" height="16" /></a>
+            <a className="btn" href={LINKS.cv} target="_blank" rel="noopener noreferrer">Résumé (PDF) <Arrow width="16" height="16" /></a>
+          </div>
+        </header>
 
         <div className="graph" onMouseLeave={() => setTip(null)}>
           {graph.state === "ok" && (
-            <div className="graph__grid" style={{ "--lead": lead }}>
+            <div className="graph__grid">
               {graph.days.map((d, i) => (
                 <i
                   key={d.date}
@@ -119,20 +96,18 @@ export default function Signal() {
               ))}
             </div>
           )}
-          {graph.state === "loading" && <p className="graph__msg">Loading contribution graph…</p>}
+          {graph.state === "loading" && <p className="graph__msg">Loading the contribution graph…</p>}
           {graph.state === "error" && (
             <p className="graph__msg">
-              Couldn't load the graph right now. <a href={LINKS.github}>See it on GitHub</a>.
+              The graph could not load right now. <a className="link" href={LINKS.github}>See it on GitHub</a>.
             </p>
           )}
-          <p className="graph__tip" aria-live="polite">
-            {tip || (st ? `Busiest day: ${st.best.count} commits on ${fmt(st.best.date)} · Longest streak: ${st.longest} days` : " ")}
-          </p>
+          <p className="graph__tip" aria-live="polite">{tip || (best ? `Busiest day: ${best.count} contributions on ${fmt(best.date)}` : " ")}</p>
         </div>
 
         <div className="feed">
-          <div className="feed__col">
-            <h3 className="feed__h">Latest pushes</h3>
+          <div>
+            <h3>Latest pushes</h3>
             {events.length ? (
               <ul>
                 {events.map((e) => (
@@ -146,45 +121,41 @@ export default function Signal() {
                 ))}
               </ul>
             ) : (
-              <p className="feed__empty">Public pushes show up here. Private client work stays private.</p>
+              <p className="feed__empty">Public pushes appear here. Client work stays private.</p>
             )}
           </div>
-
-          <div className="feed__col">
-            <h3 className="feed__h">Find me elsewhere</h3>
+          <div>
+            <h3>Elsewhere</h3>
             <ul>
               <li>
                 <a href={LINKS.linkedin} target="_blank" rel="noopener noreferrer">
                   <b>LinkedIn</b>
-                  <span>Build notes and launches. Connect with Rishab Bhatt.</span>
+                  <span>Build notes, launches and work updates.</span>
                   <time>Open ↗</time>
                 </a>
               </li>
               <li>
                 <a href={LINKS.x} target="_blank" rel="noopener noreferrer">
                   <b>X</b>
-                  <span>Quick thoughts and shipping updates from {LINKS.xHandle}.</span>
+                  <span>Shipping updates from {LINKS.xHandle}.</span>
                   <time>Open ↗</time>
                 </a>
               </li>
             </ul>
           </div>
         </div>
+
         {POSTS.length > 0 && (
           <div className="posts">
-            <h3 className="feed__h">From my feed</h3>
+            <div className="feed" style={{ display: "block", marginTop: 0 }}><h3>From my feed</h3></div>
             <div className="posts__grid">
               {POSTS.map((p) => (
                 <iframe
                   key={p.urn || p.id}
-                  className={`post post--${p.platform}`}
+                  className="post"
                   title={`${p.platform} post`}
                   loading="lazy"
-                  src={
-                    p.platform === "x"
-                      ? `https://platform.twitter.com/embed/Tweet.html?id=${p.id}&dnt=true&theme=light`
-                      : `https://www.linkedin.com/embed/feed/update/${p.urn}`
-                  }
+                  src={p.platform === "x" ? `https://platform.twitter.com/embed/Tweet.html?id=${p.id}&dnt=true&theme=light` : `https://www.linkedin.com/embed/feed/update/${p.urn}`}
                 />
               ))}
             </div>

@@ -1,102 +1,86 @@
 import { useRef, useState } from "react";
 import { gsap, ScrollTrigger, useGSAP, reduceMotion } from "./gsap";
-import { EMAIL, LINKS, wa } from "./data";
+import { EMAIL, LINKS, SERVICES, wa, mail } from "./data";
 import { WhatsAppIcon, Arrow } from "./icons";
 import Signature from "./Signature";
+import Split from "./Split";
 
-const TYPES = ["An online store", "A portfolio", "A landing page", "A business website", "An AI tool", "Not sure yet"];
+const TYPES = ["Hiring for a role", ...SERVICES.map((s) => s.title), "A school website", "Not sure yet"];
 
 export default function Contact() {
   const root = useRef(null);
   const sig = useRef(null);
-  const [type, setType] = useState(TYPES[0]);
+  const [type, setType] = useState(TYPES[1]);
   const [note, setNote] = useState("");
 
-  const msg = `Hi Rishab, I found you through your portfolio. I'm looking for: ${type.toLowerCase()}.${note.trim() ? " " + note.trim() : ""}`;
+  const hiring = type === "Hiring for a role";
+  const body = hiring
+    ? `Hi Rishab, I'm hiring and I found your portfolio.${note.trim() ? " " + note.trim() : ""}`
+    : `Hi Rishab, I found your portfolio. I'm looking for: ${type.toLowerCase()}.${note.trim() ? " " + note.trim() : ""}`;
+  const subject = hiring ? "Role enquiry from your portfolio" : `Project enquiry: ${type}`;
 
   useGSAP(
     () => {
-      gsap.from(".ct__title span", {
-        yPercent: 110,
-        duration: 1.1,
-        stagger: 0.08,
-        ease: "expo.out",
-        scrollTrigger: { trigger: ".ct__title", start: "top 85%", once: true },
-      });
       if (reduceMotion()) {
-        root.current.querySelector(".sig").classList.add("sig--done");
+        root.current.querySelector(".sig")?.classList.add("sig--done");
         return;
       }
-      ScrollTrigger.create({
-        trigger: ".ct__sign",
-        start: "top 85%",
-        once: true,
-        onEnter: () => sig.current.play(),
-      });
+      ScrollTrigger.create({ trigger: ".contact__sign", start: "top 88%", once: true, onEnter: () => sig.current?.play() });
     },
     { scope: root }
   );
 
   return (
-    <section ref={root} id="contact" className="ct">
+    <section ref={root} id="contact" className="sec contact">
       <div className="wrap">
-        <h2 className="ct__title">
-          <span>Got something</span> <span>to build?</span>
-        </h2>
+        <p className="eyebrow">Contact</p>
+        <Split className="display contact__title" lines={["Have a project,", "or a role in mind?"]} />
 
-        <div className="ct__grid">
-          <div className="ct__form">
+        <div className="contact__grid">
+          <div>
             <fieldset>
-              <legend>I want to build</legend>
-              <div className="ct__chips">
+              <legend>What is it about</legend>
+              <div style={{ display: "flex", flexWrap: "wrap", gap: "0.5rem" }}>
                 {TYPES.map((t) => (
-                  <label key={t} className={type === t ? "is-on" : ""}>
+                  <label key={t} className={`chip ${type === t ? "is-on" : ""}`}>
                     <input type="radio" name="type" value={t} checked={type === t} onChange={() => setType(t)} />
                     {t}
                   </label>
                 ))}
               </div>
             </fieldset>
-            <label className="ct__note">
+            <label className="field">
               <span>One line about it (optional)</span>
-              <input
-                type="text"
-                value={note}
-                maxLength={140}
-                onChange={(e) => setNote(e.target.value)}
-                placeholder="A booking site for my studio, launching in March"
-              />
+              <input type="text" value={note} maxLength={160} onChange={(e) => setNote(e.target.value)} placeholder={hiring ? "A frontend role, remote, starting next month" : "A booking site for my studio, live by March"} />
             </label>
-            <a className="btn btn--wa btn--xl mag" href={wa(msg)} target="_blank" rel="noopener noreferrer">
-              <WhatsAppIcon width="22" height="22" /> Send on WhatsApp
-            </a>
+            <div className="contact__send">
+              <a className="btn btn--accent btn--lg" href={wa(body)} target="_blank" rel="noopener noreferrer">
+                <WhatsAppIcon /> Send on WhatsApp
+              </a>
+              <a className="btn btn--light btn--lg" href={mail(subject, `${body}\n\nName:\nCompany:\n`)}>
+                Send by email
+              </a>
+            </div>
           </div>
 
-          <div className="ct__preview" aria-live="polite">
-            <div className="ct__who">
-              <img src="/pfp.png" alt="" width="52" height="52" />
+          <div className="msg" aria-live="polite">
+            <div className="msg__who">
+              <img src="/pfp.png" alt="" width="48" height="48" />
               <p>
                 <b>Rishab Bhatt</b>
-                <span>This is the message I'll get</span>
+                <span>This is the message I will receive</span>
               </p>
             </div>
-            <p className="ct__bubble">{msg}</p>
-            <ul className="ct__alt">
-              <li>
-                <a href={`mailto:${EMAIL}`}>
-                  {EMAIL} <Arrow width="16" height="16" />
-                </a>
-              </li>
-              <li>
-                <a href={LINKS.cv} target="_blank" rel="noopener noreferrer">
-                  Download résumé <Arrow width="16" height="16" />
-                </a>
-              </li>
-            </ul>
+            <p className="msg__bubble">{body}</p>
+            <div className="msg__alt">
+              <a href={`mailto:${EMAIL}`}>{EMAIL} <Arrow width="14" height="14" /></a>
+              <a href={LINKS.cv} target="_blank" rel="noopener noreferrer">Download résumé <Arrow width="14" height="14" /></a>
+              <a href={LINKS.linkedin} target="_blank" rel="noopener noreferrer">LinkedIn <Arrow width="14" height="14" /></a>
+            </div>
           </div>
         </div>
 
-        <div className="ct__sign">
+        <div className="contact__sign">
           <Signature ref={sig} className="sig--contact" />
         </div>
       </div>
